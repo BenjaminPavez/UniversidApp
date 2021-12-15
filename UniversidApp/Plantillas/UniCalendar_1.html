@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+<html lang="es">
+  {% include "natbar.html" %}
+  <head>
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'Imagenes/Logo_2.png' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>UniCalendar</title>
+    
+    
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+<style>
+    body{
+      background: url({% static 'Imagenes/back.png' %}) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+<!-- Custom styles for this template -->
+    
+<link href="{% static 'css/form-validationdir.css' %}" rel="stylesheet">
+    
+</head>
+<body class="bg-light">
+  
+<div class="container">
+<main>
+  <div class="py-5 text-center">
+    <img src="{% static "Imagenes/UniCalendar_2.png" %}",width="72" height="72" />
+    <h2>UniCalendar</h2>
+    <p class="lead">La mejor manera de mantener organizada tu vida estudiantil.</p>
+  </div>
+  <p></p>
+  <div>
+    <button type="button" class="btn btn-primary btn-lg"><a href={% url 'UniCalendar' %}>Crear tu horario</a></button>
+  </div>
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2020–2021 Sebeval</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacidad</a></li>
+      <li class="list-inline-item"><a href="#">Terminos</a></li>
+      <li class="list-inline-item"><a href="#">Soporte</a></li>
+    </ul>
+  </footer>
+</div>
+

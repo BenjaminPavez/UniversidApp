@@ -1,0 +1,216 @@
+<html>
+{% load static %}
+ <head>
+ <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+ <link rel="icon" type="image/png" sizes="96x96" href="{% static 'Imagenes/Logo_2.png' %}">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>UniversidApp Developers</title>
+
+<!-- Bootstrap 4.0 -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<!--Code by Byspel.com -->
+ <!--Code by Byspel.com -->
+
+<!-- Contenedor -->
+ <div class="container-fluid">
+ <div class="row">
+
+<div class="col-12">
+ <!-- Card -->
+ <div class="col-12">
+
+<div class="container">
+ <div class="row">
+ <div class="col-12">
+ <br>
+ <!-- Titulo del Card -->
+ <br>
+ </div>
+ </div>
+
+<div class="row">
+ <div class="col-12">
+ <form id="" action="">
+
+<!-- Notas -->
+ <div class="form-group"> 
+ <!-- Boton Agregar -->
+ <input class="btn btn-success" type="button" title="Agregar Nota" Value="Agregar Nota" onclick="agregar()">
+ <!-- Boton Borrar -->
+ <input class="btn btn-danger" type="button" title="Borrar Nota" Value="Quitar Nota" onclick="borrar()">
+ <br>
+ <br>
+ <!-- Div donde se añadiran los Selects -->
+ <div class="col-12" id="notas">
+ </div>
+
+<br> 
+ <input class="btn btn-info" type="submit" Value="Guardar" >
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+
+
+ <script language="JavaScript">
+ //Creacion de Variable incremental
+ var incremento = 0;
+
+//Lo que se hará cuando se presione el boton de Agregar
+ function agregar(obj)
+ {
+
+incremento++;
+
+
+ //Obteniendo el Div "notas"
+ bloque = document.getElementById('notas');
+
+//Creando el Select que irá dentro del Div "notas"
+ elemento = document.createElement('select');
+ elemento.setAttribute("class", "custom-select custom-select-sm-1 mb-3 form-select" );
+ elemento.id = 'select'+incremento;
+ bloque.appendChild(elemento);
+
+
+ //Llenando el arreglo que contendrá los "Options" de nuestro "notas"
+ var options = [
+ "0",
+ "1",
+ "2",
+ "3",
+ "4",
+ "5",
+ "6",
+ "7",
+ "8",
+ "9",
+ "10",
+ "11",
+ "12",
+ "13",
+ "14",
+ "15",
+ "16",
+ "17",
+ "18",
+ "19",
+ "20",
+ "21",
+ "22",
+ "23",
+ "24",
+ "25",
+ "26",
+ "27",
+ "28",
+ "29",
+ "30",
+ "31",
+ "32",
+ "33",
+ "34",
+ "35",
+ "36",
+ "37",
+ "38",
+ "39",
+ "40",
+ "41",
+ "42",
+ "43",
+ "44",
+ "45",
+ "46",
+ "47",
+ "48",
+ "49",
+ "50",
+ "51",
+ "52",
+ "53",
+ "54",
+ "55",
+ "56",
+ "57",
+ "58",
+ "59",
+ "60",
+ "61",
+ "62",
+ "63",
+ "64",
+ "65",
+ "66",
+ "67",
+ "68",
+ "69",
+ "70",
+ "71",
+ "72",
+ "73",
+ "74",
+ "76",
+ "77",
+ "78",
+ "79",
+ "80",
+ "81",
+ "82",
+ "83",
+ "84",
+ "85",
+ "86",
+ "87",
+ "88",
+ "89",
+ "90",
+ "91",
+ "92",
+ "93",
+ "94",
+ "95",
+ "96",
+ "97",
+ "98",
+ "99",
+ "100"
+ ];
+
+
+ //Agregando nuestros "Options" a nuestro "Select"
+ for (var i = 0; i < options.length; i++) {
+ var option = document.createElement("option");
+ option.value = options[i];
+ option.text = options[i];
+ elemento.appendChild(option);
+ }
+ }
+
+
+ //Lo que se hará cuando se presione el boton de Borrar
+ function borrar(obj) {
+ incremento = incremento - 1;
+ bloque = document.getElementById('notas');
+ bloque.removeChild(bloque.lastChild);
+ }
+ </script>
+ <footer>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ </footer>
+
+</body>
+
+</html>

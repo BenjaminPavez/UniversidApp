@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/apple-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static 'Imagenes/Logo_2.png' %}">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>UniversidApp</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/gaia.css' %}" rel="stylesheet"/>
+
+    <!--     Fonts and icons     -->
+    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'assets/css/fonts/pe-icon-7-stroke.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
+        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+        <div class="container">
+            <div class="navbar-header">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+                <a href="{% url 'Home' %}" class="navbar-brand">
+                    UniversidApp
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                    <li>
+                        <a href="{% url 'Universidades' %}" target="_blank">Universidad</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-share-alt"></i> Share
+                        </a>
+                        <ul class="dropdown-menu dropdown-danger">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100074893062540"><i class="fa fa-facebook-square"></i> Facebook</a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/UniversidApp"><i class="fa fa-twitter"></i> Twitter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/UniversidApp_Oficial/"><i class="fa fa-instagram"></i> Instagram</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'login' %}" class="btn btn-danger btn-fill">Sign in</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+
+    <div class="section section-header">
+        <div class="parallax filter filter-color-red">
+            <div class="image"
+                style="background-image: url({% static 'assets/img/1.png' %})">
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="title-area">
+                        <p>Sebeval presenta</p>
+                        <h1 class="title-modern">UniversidApp</h1>
+                        <h3>Un sitio para organizar tu estudio.</h2>
+                        <div class="separator line-separator">♦</div>
+                    </div>
+
+                    <div class="button-get-started">
+                        <a href={% url 'Nuevo UniversidApp ID' %} target="_blank" class="btn btn-white btn-fill btn-lg ">
+                            Registrate Ahora
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="title-area">
+                    <h2>Servicios</h2>
+                    <div class="separator separator-danger">✻</div>
+                    <p class="description">En UniversidApp estamos comprometido con mejorar el rendimiento de los estudiantes. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="info-icon">
+                        <div>
+                            <img data-toggle="dropdown" class="dropdown-toggle" src="{% static 'assets/img/UniCalculate.png' %}" width="72" height="72">
+                        </div>
+                        <h3>UniCalculate</h3>
+                        <p class="description">Con UniCalculate podras calcular tus promedios y realizar predicciones de acuerdo a tu rendimiento.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-icon">
+                        <div>
+                            <img data-toggle="dropdown" class="dropdown-toggle" src="{% static 'assets/img/UniCalendar_2.png' %}" width="72" height="72">
+                        </div>
+                        <h3>UniCalendar</h3>
+                        <p class="description">Con UniCalendar podras organizar tus tiempos y tus horarios, para no olvidarte de tus obligaciones como estudiante.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-icon">
+                        <div>
+                            <img data-toggle="dropdown" class="dropdown-toggle" src="{% static 'assets/img/UniversiChat.png' %}" width="72" height="72">
+                        </div>
+                        <h3>UniversiChat</h3>
+                        <p class="description">Con UniversiChat podras contactarte y compartir con tus compañeros para apoyarse mutuamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section section-our-team-freebie">
+        <div class="parallax filter filter-color-black">
+            <div class="image" style="background-image:url({% static 'assets/img/header-2.jpeg' %})">
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="title-area">
+                            <h2>¿Quienes Somos?</h2>
+                            <div class="separator separator-danger">✻</div>
+                            <p class="description">UniversidApp surgio como apoyo a los estudiantes para poder administrar, organizar y compartir con sus compañeros.</p>
+                        </div>
+                    </div>
+
+                    <div class="team">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card card-member">
+                                            <div class="content">
+                                                <div class="avatar avatar-danger">
+                                                    <img alt="..." class="img-circle" src="{% static 'assets/img/faces/lucio.jpeg' %}"/>
+                                                </div>
+                                                <div class="description">
+                                                    <h3 class="title">Luciano</h3>
+                                                    <p class="small-text">CEO / Co-Founder</p>
+                                                    <p class="description">Cuando uno comienza a estudiar, de inmediato buscamos aplicaciones para mejorar nuesta estadia en la institucion, pero no existe ninguna aplicacion que junte todo lo que necesite un estudiante, hasta ahora.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card card-member">
+                                            <div class="content">
+                                                <div class="avatar avatar-danger">
+                                                    <img alt="..." class="img-circle" src="{% static 'assets/img/faces/vladi_2.jpg' %}"/>
+                                                </div>
+                                                <div class="description">
+                                                    <h3 class="title">Vladimir</h3>
+                                                    <p class="small-text">Front-end Developer</p>
+                                                    <p class="description">Trabajar en este proyecto me ha recordado lo complicado que era organizarse con el tema del estudio, pero ahora como desarrollador, me doy cuenta que estoy aportando un poco en el desarrollo de los estudiante y futuros profesionales.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card card-member">
+                                            <div class="content">
+                                                <div class="avatar avatar-danger">
+                                                    <img alt="..." class="img-circle" src="{% static 'assets/img/faces/benja.jpg' %}"/>
+                                                </div>
+                                                <div class="description">
+                                                    <h3 class="title">Benjamín</h3>
+                                                    <p class="small-text">Back-end Developer</p>
+                                                    <p class="description">Yo creo que UniversidApp va a cambiar totalmente la organizacion y comunicacion, ya que está al alcance de la mano el poder de organizarte, lo que hace más facil lograr adaptarse al ritmo de la Universidad.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section section-our-clients-freebie">
+        <div class="container">
+            <div class="title-area">
+                <h2>Testimonios de Estudiantes</h2>
+                <div class="separator separator-danger">∎</div>
+            </div>
+
+            <ul class="nav nav-text" role="tablist">
+                <li class="active">
+                    <a href="#testimonial1" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="{% static 'assets/img/faces/face_5.jpg' %}"/>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonial2" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="{% static 'assets/img/faces/face_6.jpg' %}"/>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonial3" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="{% static 'assets/img/faces/face_2.jpg' %}"/>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="testimonial1">
+                    <p class="description">
+                        He comenzado a utilizar esta aplicación y realmente me cambió mi forma de estudiar, ahora tengo todo organizado en un solo sitio.
+                    </p>
+                </div>
+                <div class="tab-pane" id="testimonial2">
+                    <p class="description">Cuando entre a la universidad utilizaba muchas aplicaciones para mejorar mi situacion como estudiante, pero ahora en UniversidApp tengo todo en un solo lugar.
+                    </p>
+                </div>
+                <div class="tab-pane" id="testimonial3">
+                    <p class="description"> Es genial ahora tener todo en un solo lugar, antes necesitaba como 3 aplicaciones para poder organizarme, pero ahora es distinto gracias a UniversidApp.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section section-small section-get-started">
+        <div class="parallax filter">
+            <div class="image"
+                style="background-image: url({% static 'assets/img/office-1.jpeg' %})">
+            </div>
+            <div class="container">
+                <div class="title-area">
+                    <h2 class="text-white">¿Quieres ser parte de UniversidApp?</h2>
+                    <div class="separator line-separator">♦</div>
+                    <p class="description"> Constantemente trabajamos para incorporar más instituaciones en nuestra App por lo que te invitamos a ser parte de UniversidApp.</p>
+                </div>
+
+                <div class="button-get-started">
+                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contactarse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer footer-big footer-color-black" data-color="black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-3">
+                    <div class="info">
+                        <h5 class="title">Empresa</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'Home' %}">Pagina de Inicio</a></li>
+                                <li>
+                                    <a href="{% url 'Mantencion' %}">Trabaja con Nosotros</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Mantencion' %}">Proyectos</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Mantencion' %}">Portafolio</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Mantencion' %}">Acerca de</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-1 col-sm-3">
+                    <div class="info">
+                        <h5 class="title"> Ayuda y Soporte</h5>
+                         <nav>
+                            <ul>
+                                <li>
+                                    <a href="mailto:universidappc@gmail.com">Contacto</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Mantencion' %}">Noticias</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'terminos' %}">Terminos y condiciones</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'terminos' %}">Politica</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Mantencion' %}">Anuncios</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-sm-3">
+                    <div class="info">
+                        <h5 class="title">Ultimas Noticias</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="https://twitter.com/Benjami06830606/status/1460442230640898050">
+                                        <i class="fa fa-twitter"></i> <b>Increible Aplicación.</b> Gracias a su aplicación, puede organizar mejor mis tiempos.
+                                        <hr class="hr-small">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/p/CWUjpE3rMAL/">
+                                        <i class="fa fa-instagram"></i> Estupenda App. <b> Muchas Gracias</b> por la aplicacion, era justo lo que necesitaba.
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-1 col-sm-3">
+                    <div class="info">
+                        <h5 class="title">Siguenos</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=100074893062540" class="btn btn-social btn-facebook btn-simple">
+                                        <i class="fa fa-facebook-square"></i> Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/UniversidApp_Oficial/" class="btn btn-social btn-dribbble btn-simple">
+                                        <i class="fa fa-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/UniversidApp" class="btn btn-social btn-twitter btn-simple">
+                                        <i class="fa fa-twitter"></i> Twitter
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                 © 2020 <script> document.write(new Date().getFullYear()) </script> Sebeval, a tu servicio
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<!--   core js files    -->
+<script src="{% static 'assets/js/jquery.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'assets/js/bootstrap.js' %}" type="text/javascript"></script>
+
+<!--  js library for devices recognition -->
+<script type="text/javascript" src="{% static 'assets/js/modernizr.js' %}"></script>
+
+<!--  script for google maps   -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
+<script type="text/javascript" src="{% static 'assets/js/gaia.js' %}"></script>
+
+</html>
