@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+{% load static %}
+
+<link rel="icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+<html lang="es">
+  {% include "natbar.html" %}
+  <head>
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'Imagenes/Logo_2.png' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>UniCalculate</title>
+    
+    
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
+    
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      body{
+        background: url({% static 'Imagenes/degradado_2.png' %}) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    
+    <link href="{% static 'css/form-validationdir.css' %}" rel="stylesheet">
+    
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <img src="{% static "Imagenes/UniCalculate.png" %}",width="72" height="72" />
+      <h2>UniCalculate</h2>
+      <p class="lead">La mejor manera de calcular tu promedio y la unica en realizar estimaciones acorde a tu desempeño.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary" align:"center">Grafico Porcentual Aprobatorio</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <a> <script src="https://d3js.org/d3.v4.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+              <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"/>
+              <linkrel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css"/>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+              <body>
+                <div>
+                  No disponible actualmente
+                </div>
+                <script type="text/python">
+                  from browser import *
+          
+                  def pedir_numero(evento):
+                      global promedio_posible
+                      uni = prompt("Usted estudia en: Universidad Técnica Federico Santa María \n Presione 1 para confirmar")
+                      asignatura = prompt("Ingrese nombre de la Asignatura: ")
+                      if uni == "1":
+                          max_nota = float(100)
+                          inter_nota = float(55)
+                          min_nota = float(0)
+                          if uni == "1":
+                              crit_1 = 90
+                              crit_2 = 70
+                              crit_3 = 30
+                          else:
+                              crit_1 = float((90*7)/100)
+                              crit_2 = float((70*7)/100)
+                              crit_3 = float((30*7)/100)
+                          notas_ramo = int(prompt("Ingrese numero de notas de la asignatura: "))
+                          nota_faltantes = int(prompt("Ingrese numero de notas faltantes: "))
+                          notas_oficiales = notas_ramo - nota_faltantes
+                          var_2 = 0
+                          suma = 0
+                          formato = "Ingrese Nota {}: "
+                          while var_2 < notas_oficiales:
+                              nota = float(prompt(formato.format(var_2 + 1)))
+                              ponde = int(prompt("Ingrese ponderación de la nota: "))
+                              suma  += nota*ponde/100
+                              var_2 += 1
+          
+                          criterio = int(prompt("Como se considera: \n *** Ingrese el numero de la categoria que usted crea que pertenece *** \n 1: Muy responsable \n 2: Responsable \n 3: Irresponsable \n Selecione su criterio: "))
+                          var_3 = 0
+                          while var_3 < nota_faltantes:
+                              plan = "Ingrese ponderación de nota {} simulada: "
+                              if criterio >= 4:
+                                  print("Favor marcar numero correcto")
+                              elif criterio == 1:
+                                  pon = int(prompt(plan.format(var_3 + 1)))
+                                  suma += crit_1*pon/100
+                              elif criterio == 2:
+                                  pon = int(prompt(plan.format(var_3 + 1)))
+                                  suma += crit_2*pon/100
+                              elif criterio == 3:
+                                  pon = int(prompt(plan.format(var_3 + 1)))
+                                  suma += crit_3*pon/100
+                              var_3 += 1
+                          promedio_posible = round(suma, 2)
+                          porcentaje = int((promedio_posible/max_nota)*100)
+                          alert(promedio_posible)
+                          alert("Tu promedio de la asignatura es de: " + str(promedio_posible))
+                          alert("Tu porcentaje de aprobar la asignatura es de: "+ str(porcentaje) + "%")
+                          if promedio_posible >= inter_nota:
+                              alert("De acuerdo a los datos entregados, tienes gran probabilidad de pasar la asignatura")
+                          elif promedio_posible < inter_nota:
+                              alert("Lamentablemente es posible que no pases la asignatura :(")
+                  promedio_posible= None
+                  document['datos'].bind('click', pedir_numero)
+              </script>
+                <div id="donut-chart"></div>
+                <script>
+                  var chart = bb.generate({
+                    data: {
+                      columns: [
+                        ["Aprobado", 10],
+                        ["Reprobado", 2],
+                      ],
+                      type: "donut",
+                      onclick: function (d, i) {
+                        console.log("onclick", d, i);
+                      },
+                      onover: function (d, i) {
+                        console.log("onover", d, i);
+                      },
+                      onout: function (d, i) {
+                        console.log("onout", d, i);
+                      },
+                    },
+                    donut: {
+                      title: "",
+                    },
+                    bindto: "#donut-chart",
+                  });
+                </script>
+              </body>
+            </a>
+        </ul>
+
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Calculo de Promedio</h4>
+          <div class="m-0 vh-100 row justify-content-center align-items-center">
+            <form action="" method="POST" class="needs-validation" novalidate> <input type="hidden" name="csrfmiddlewaretoken" value="xkm58cfthOKZo6O21Z8RZSCky9M9PYUEgslUMSLIppK4unZpDTG6hL1Nc8xWbMnx">  {% csrf_token %}
+              <table id="tabla" class="d-flex justify-content-center">
+                 <tr><th><label for="id_usuario">Usuario:</label></th><td><input readonly value={{user}} type="text" name="usuario" maxlength="30" required id="id_usuario"  ></td></tr>
+                 <tr><th><label for="id_asignatura">Asignatura:</label></th><td><input type="text" name="asignatura" maxlength="30" required id="id_asignatura"></td></tr>
+                 <tr><th><label for="id_tipo_evaluacion">Tipo evaluacion:</label></th><td><input type="text" name="tipo_evaluacion" maxlength="30" required id="id_tipo_evaluacion"></td></tr>
+                 <tr><th><label for="id_promedio">Promedio:</label></th><td><input type="text" name="promedio" maxlength="30" required id="id_promedio"></td></tr>
+              </table>
+              <center><input type="submit" name="enviar" class="btn btn-dark"></center>
+            </form>
+            <body onload=brython()>
+              <div class="container">
+                <div class="row g-1">
+                  <div class="col text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="button" id="datos" class="btn btn-dark" value="Comenzar">
+                    <a href="{% url 'UniRegist' %}"><button class="btn btn-primary" type="submit">Registros</button><a>
+                  </div>
+                  
+                    
+  </body>
+
+  <div class="m-0 vh-100 row justify-content-center align-items-center">
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2020–2021 Sebeval</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacidad</a></li>
+          <li class="list-inline-item"><a href="#">Terminos</a></li>
+          <li class="list-inline-item"><a href="#">Soporte</a></li>
+        </ul>
+    </footer>
+  </div>
+
+</html>
+
+
+              

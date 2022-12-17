@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static %}
+<link rel="icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">  
+<html lang="es">
+ <body background="{% static 'assets/img/des.png' %}"  style="background-position:center" >
+  <header>
+    
+  </header>
+  <head>
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'Imagenes/Logo_2.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'Imagenes/Logo_2.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>UniversidApp ID</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" method="POST">
+      {% csrf_token %}
+      <img src="{% static 'Imagenes/Logo_2.png' %}",width="72" height="72" />
+      <h1 class="h3 mb-3 font-weight-normal">Inicio Sesión</h1>
+      <table>
+        {{form.as_table}}
+      </table>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordar Contraseña
+        </label>
+        <label>
+        <a href="{% url 'Nuevo UniversidApp ID' %}" target="_blank">¿Eres Nuevo?, Registrate aqui</a>
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+      <br>
+      <div>
+        {% block content %}
+      
+        {% endblock %}
+      </div>
+      <p class="mt-5 mb-3 text-muted">&copy; 2020-2021 Sebeval, a tu servicio</p>
+    </form>
+  </body>
+  
+</html>
+
