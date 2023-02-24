@@ -1,5 +1,5 @@
-Nombres: Luciano Yevenes
-         Vladimir Sagredo
+Nombres: Luciano Yevenes,
+         Vladimir Sagredo,
          Benjamin Pavez
          
 SO: Windows 10
