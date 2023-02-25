@@ -4,7 +4,7 @@ Nombres: Luciano Yevenes,
          
 SO: Windows 10
 
-Lenguajes de Programacion utilizados: Python, PHP, JavaScript
+Lenguajes de Programacion utilizados: Python, JavaScript
 
 Framework: Django
 
